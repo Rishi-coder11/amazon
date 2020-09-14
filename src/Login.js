@@ -7,7 +7,6 @@ function Login() {
     const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [name, setName] = useState('');
     
     const signIn = e => {
         e.preventDefault();
@@ -26,7 +25,7 @@ function Login() {
         e.preventDefault();
 
         auth
-            .createUserWithEmailAndPassword(email, password)
+            .createUserWithEmailAndPassword(email, password, )
             .then((auth) => {
                 // it successfully created a new user with email and password
                 if (auth) {
@@ -53,7 +52,7 @@ function Login() {
                 <form>
                     <h5>E-mail</h5>
                     <input type='text' value={email} onChange={e => setEmail(e.target.value)}/>
-
+        
                     <h5>Password</h5>
                     <input type='password' value={password} onChange={e => setPassword(e.target.value)}/>
 
